@@ -1,0 +1,57 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @*
+        Html form elementleri html helper sınıfı içerisinde bulunan metodlar ile oluşturulmaktadır
+        bu fonksiyonları kullanarak Textbox , Textare,checkbox vb elementleri oluşturabiliriz
+        Html.<formadi> şeklinde kullanılır
+    *@
+    <div> 
+
+        @using (Html.BeginForm())
+            {
+                <p>
+                    <b>AD</b>
+                    @Html.TextBox("ad")
+                </p>
+                <p>
+                    <b>Mesaj</b>
+                    @Html.TextArea("mesaj")
+                </p>
+                <p>
+                    <b>Kullandığınız programlama dilleri</b>
+                    @Html.CheckBox("html")HTML
+                    @Html.CheckBox("csharp")C#
+                    @Html.CheckBox("python")Python
+
+                </p>
+                <p>
+                    <b>Cinsiyetiniz</b>
+                    @Html.RadioButton("rbCinsiyet",0)Kadın
+                    @Html.RadioButton("rbCinsiyet",1)Erkek
+                    @Html.RadioButton("rbCinsiyet",2)Belirtmek İstemiyorum
+                </p>
+                <p>
+                    <b>Şifre</b>
+                    @Html.Password("sifre")
+                </p>
+                <p>
+                    <b>Şehirler</b>
+                    @Html.DropDownList("Sehirler","Şehir Seçiniz")
+                   
+                </p>
+                <button type="submit">Gönder</button>
+            }
+    </div>
+</body>
+</html>
